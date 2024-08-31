@@ -1,0 +1,277 @@
+body {
+    background-image: url('../../ar/OIG3.HV.jpg');
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+/*Barra de navegacion */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(65, 54, 212, 0.85);
+    padding: 0 15px;
+}
+
+.menu-1, .menu-2 {
+    display: flex;
+    align-items: center;
+}
+button{
+    background-color: #D9D9D9;
+}
+
+.menu-1 button {
+    width: 132px;
+    height: 34px;
+    margin-left: 10px;
+}
+
+.menu-2 {
+    margin-right: 15px;
+}
+
+.menu-2 button {
+    width: 128px;
+    height: 29px;
+    margin-left: 10px;
+    border-radius: 15px;
+}
+
+.menu-1 button:hover, .menu-2 button:hover {
+    background-color: #B3B3B3;
+}
+/*Fin barra navegacion*/
+
+/*COntenido de la pagina*/
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 55px; /* Espaciado uniforme para ambos lados del contenedor */
+}
+
+.logo {
+    margin-top: 50px;
+    background-color: aqua;
+    width: 400px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    overflow: hidden;       
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.texto {
+    margin-top: 50px;
+    background-color: #CA7777;
+    border-radius: 25px;
+    width: 480px;
+    height: 370px;
+    padding: 20px;
+}
+/*Fin contenido*/
+
+/*Muestra de modales*/
+
+/*modal de inicio*/
+.modal-inicio {
+    display: none; /* El modal está oculto por defecto */
+    width: 315px;
+    height: 371px;
+    background-color: #928D8D;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 30px;
+}
+
+.modal-inicio input{
+    width: 243px;
+    height: 36px;
+    margin-bottom: 20px;
+}
+.modal-inicio button{
+    width: 122px;
+    height: 34px;
+    border-radius: 10px;
+}
+ /*Cerra modal*/
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    margin: 0; /* Asegura que no haya espacio extra */
+    padding: 0; /* Elimina cualquier padding predeterminado */
+}
+ /*Cerra modal*/
+.close-modal:hover {
+    color: red;
+}
+
+.modal-inicio, .modal-contra{
+    text-align: center;
+}
+.modal-inicio button:hover{
+    background-color: #A0A0A0;
+}
+
+#olvide_contra{
+    padding-top: 5px;
+    text-align: right;
+}
+
+#olvide_contra:hover{
+    color:red;
+}
+/*modal olvide*/
+.modal-contra {
+    display: none; 
+    width: 315px;
+    height: 371px;
+    background-color: #928D8D;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 30px;
+}
+
+.modal-contra input{
+    width: 243px;
+    height: 36px;
+    margin-bottom: 20px;
+}
+.modal-contra button{
+    width: 122px;
+    height: 34px;
+    border-radius: 10px;
+}
+.modal-contra button:hover{
+    background-color: #A0A0A0;
+}
+
+/*Modal registro*/
+.modal-registro{
+    display: none;
+    background-color: #928D8D;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 30px;
+}
+
+#registroContainer {
+    width: 500px;
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+}
+
+#registroContainer h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#registroContainer .form-columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+#registroContainer .left-column,
+#registroContainer .right-column {
+    width: 45%;
+}
+
+#registroContainer fieldset {
+    border: 1px solid #000;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    text-align: left; /* Para alinear el contenido a la izquierda */
+}
+
+#registroContainer fieldset legend {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#registroContainer fieldset label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+#registroContainer input[type="radio"] {
+    margin-right: 8px;
+}
+
+#registroContainer input[type="text"],
+#registroContainer input[type="email"],
+#registroContainer input[type="password"],
+#registroContainer input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #C4C4C4;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#registroContainer button[type="submit"] {
+    width: 126px;
+    height: 36px;
+    margin-top: 20px;
+    background-color: #B3B3B3;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#registroContainer button[type="submit"]:hover {
+    background-color: #A0A0A0;
+}
+
+/*Poner borrosa la pagina*/
+.blur-background {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
