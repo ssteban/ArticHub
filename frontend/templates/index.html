@@ -11,8 +11,8 @@
 <body>
     <header>
         <nav>
+            <h1 id="Ini">ArticHub</h1>
             <div class="menu-1">
-                <h1 id="Ini">ArticHub</h1>
                 <a href="index.html"><button type="button" id="Somos">Quienes Somos?</button></a>
                 <a href="articulos.html"><button type="button" id="Articulos">Ver Articulos</button></a>
             </div>
@@ -20,17 +20,35 @@
                 <button type="button" type="registrar" id="Registrarse">Registrarse</button>
                 <button type="button" id="Inicio">Iniciar Sesion</button>
             </div>
+
+            <button class="menu_boton" id="menu_boton">☰</button>
         </nav>
+        <nav class="menu" id="menu">
+            <a href="index.html">Quienes Somos?</a>
+            <hr>
+            <a href="articulos.html">Ver Articulos</a>
+            <hr>
+            <button type="button" id="Registrarse">Registrarse</button>
+            <hr>
+            <button type="button" id="Inicio">Iniciar Sesion</button>
+        </nav>
+
     </header>
 
 
     <div class="container" id="container">
-        <div class="logo">
+        <div class="in-flex">
             <img src="../../ar/079e7d0c4555412c8590abdad08ea635-free.png" alt="Logo de la pagina">
         </div>
-    
-        <div class="texto">
-            <h3>ArticHub es una plataforma versátil donde los usuarios pueden registrar, compartir y descubrir artículos sobre una amplia gama de temas, desde tecnología y moda hasta cultura y estilo de vida. Esta plataforma está diseñada para ser un espacio inclusivo donde los creadores de contenido pueden publicar sus ideas y conocimientos, y donde los lectores pueden explorar y mantenerse al día con las últimas tendencias y avances en diversas áreas de interés. Con una interfaz intuitiva y funciones fáciles de usar, ArticHub se convierte en el lugar ideal para conectar a personas apasionadas por la información y la innovación.</h3>
+
+        <div class="in-flex">
+            <h3>ArticHub es una plataforma versátil donde los usuarios pueden registrar, compartir y descubrir artículos
+                sobre una amplia gama de temas, desde tecnología y moda hasta cultura y estilo de vida. Esta plataforma
+                está diseñada para ser un espacio inclusivo donde los creadores de contenido pueden publicar sus ideas y
+                conocimientos, y donde los lectores pueden explorar y mantenerse al día con las últimas tendencias y
+                avances en diversas áreas de interés. Con una interfaz intuitiva y funciones fáciles de usar, ArticHub
+                se convierte en el lugar ideal para conectar a personas apasionadas por la información y la innovación.
+            </h3>
         </div>
     </div>
 
@@ -44,7 +62,7 @@
         </form>
         <h4 id="olvide_contra">olvidaste tu contraseña?</h4>
     </div>
-    
+
     <div class="modal-contra" id="modal_contra">
         <p class="close-modal" id="closeModal">&times;</p>
         <h1>Olvidaste tu contraseña</h1>
@@ -91,4 +109,5 @@
     </div>
     <script src="../js/script.js"></script>
 </body>
+
 </html>

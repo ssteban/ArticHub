@@ -4,24 +4,57 @@ body {
     padding: 0;
 }
 
-a{
+a {
     color: inherit;
     text-decoration: none;
 }
+
 /*Barra de navegacion */
+h1 {
+    color: #fff;
+}
+
+.menu_boton {
+    display: none;
+    cursor: pointer;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    outline: none;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(65, 54, 212, 0.85);
+    background-color: #4136D4;
     padding: 0 15px;
 }
 
-.menu-1, .menu-2 {
+.menu {
+    display: none;
+    width: 150px;
+    color: white;
+    position: absolute; /* Cambiar a posición absoluta */
+    right: 0;
+}
+.menu button{
+    margin-bottom: 15px;
+    /*poner el witd el heig cambia colores ajustar botones y mas*/
+} 
+
+.menu-1,
+.menu-2 {
     display: flex;
     align-items: center;
 }
-button{
+
+.menu-1 {
+    margin-right: 750px;
+}
+
+button {
     background-color: #D9D9D9;
 }
 
@@ -42,51 +75,81 @@ button{
     border-radius: 15px;
 }
 
-.menu-1 button:hover, .menu-2 button:hover {
+.menu-1 button:hover,
+.menu-2 button:hover {
     background-color: #B3B3B3;
 }
-/*Fin barra navegacion*/
 
-/*COntenido de la pagina*/
+/*Fin barra navegacion*/
 .container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 55px; /* Espaciado uniforme para ambos lados del contenedor */
-}
-
-.logo {
-    margin-top: 50px;
-    background-color: aqua;
-    width: 400px;
-    height: 350px;
-    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;    
-    overflow: hidden;       
-}
-
-.logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-}
-
-.texto {
-    margin-top: 50px;
-    background-color: #CA7777;
-    border-radius: 25px;
-    width: 480px;
-    height: 370px;
+    align-items: center;
+    gap: 20px;
     padding: 20px;
+    min-width: 250px;
 }
+
+.in-flex {
+    flex: 1;
+}
+
+.in-flex:first-child {
+    flex: 2;
+}
+
+.in-flex img {
+    width: 380px;
+    margin-left: 180px;
+    margin-top: 80px;
+}
+
+.in-flex h3 {
+    width: 384px;
+    background-color: #CA7777;
+    font-size: 20px;
+    padding-inline: 20px;
+    padding-block: 20px;
+    border-radius: 25px;
+    margin-right: 150px;
+    margin-top: 80px;
+}
+/*Falta media de table y terminar de ajustar el exixtente*/
+@media screen and (max-width: 480px) {
+    .in-flex img {
+        width: 380px;
+        margin-left: 0px;
+        margin-top: 80px;
+    }
+
+    .in-flex h3 {
+        width: 344px;
+        background-color: #CA7777;
+        padding-inline: 20px;
+        padding-block: 20px;
+        border-radius: 25px;
+        margin-right: 0px;
+        margin-top: 80px;
+    }
+
+    .menu-1,
+    .menu-2 {
+        display: none;
+    }
+    .menu_boton{
+        display: block;
+    }
+}
+
 /*Fin contenido*/
 
 /*Muestra de modales*/
 
 /*modal de inicio*/
 .modal-inicio {
-    display: none; /* El modal está oculto por defecto */
+    display: none;
+    /* El modal está oculto por defecto */
     width: 315px;
     height: 371px;
     background-color: #928D8D;
@@ -100,17 +163,19 @@ button{
     border-radius: 30px;
 }
 
-.modal-inicio input{
+.modal-inicio input {
     width: 243px;
     height: 36px;
     margin-bottom: 20px;
 }
-.modal-inicio button{
+
+.modal-inicio button {
     width: 122px;
     height: 34px;
     border-radius: 10px;
 }
- /*Cerra modal*/
+
+/*Cerra modal*/
 .close-modal {
     position: absolute;
     top: 10px;
@@ -118,32 +183,38 @@ button{
     font-size: 24px;
     color: white;
     cursor: pointer;
-    margin: 0; /* Asegura que no haya espacio extra */
-    padding: 0; /* Elimina cualquier padding predeterminado */
+    margin: 0;
+    /* Asegura que no haya espacio extra */
+    padding: 0;
+    /* Elimina cualquier padding predeterminado */
 }
- /*Cerra modal*/
+
+/*Cerra modal*/
 .close-modal:hover {
     color: red;
 }
 
-.modal-inicio, .modal-contra{
+.modal-inicio,
+.modal-contra {
     text-align: center;
 }
-.modal-inicio button:hover{
+
+.modal-inicio button:hover {
     background-color: #A0A0A0;
 }
 
-#olvide_contra{
+#olvide_contra {
     padding-top: 5px;
     text-align: right;
 }
 
-#olvide_contra:hover{
-    color:red;
+#olvide_contra:hover {
+    color: red;
 }
+
 /*modal olvide*/
 .modal-contra {
-    display: none; 
+    display: none;
     width: 315px;
     height: 371px;
     background-color: #928D8D;
@@ -157,22 +228,24 @@ button{
     border-radius: 30px;
 }
 
-.modal-contra input{
+.modal-contra input {
     width: 243px;
     height: 36px;
     margin-bottom: 20px;
 }
-.modal-contra button{
+
+.modal-contra button {
     width: 122px;
     height: 34px;
     border-radius: 10px;
 }
-.modal-contra button:hover{
+
+.modal-contra button:hover {
     background-color: #A0A0A0;
 }
 
 /*Modal registro*/
-.modal-registro{
+.modal-registro {
     display: none;
     background-color: #928D8D;
     position: fixed;
@@ -212,7 +285,8 @@ button{
     padding: 10px;
     margin-top: 10px;
     border-radius: 10px;
-    text-align: left; /* Para alinear el contenido a la izquierda */
+    text-align: left;
+    /* Para alinear el contenido a la izquierda */
 }
 
 #registroContainer fieldset legend {
@@ -263,15 +337,3 @@ button{
     filter: blur(5px);
     transition: filter 0.3s ease;
 }
-
-
-
-
-
-
-
-
-
-
-
-
