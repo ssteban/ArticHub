@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontend/styles/index.css">
+    <title>Inicio</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1 id="Ini">ArticHub</h1>
+            <div class="menu-1">
+                <a href="index.html"><button type="button" id="Somos">Quienes Somos?</button></a>
+                <a href="frontend/templates/articulos.html"><button type="button" id="Articulos">Ver Articulos</button></a>
+            </div>
+            <div class="menu-2">
+                <button type="button" type="registrar" id="Registrarse">Registrarse</button>
+                <button type="button" id="Inicio">Iniciar Sesion</button>
+            </div>
+
+            <button class="menu_boton" id="menu_boton">☰</button>
+        </nav>
+        <nav class="menu" id="menu">
+            <a href="index.html">Quienes Somos?</a>
+            <hr>
+            <a href="frontend/templates/articulos.html">Ver Articulos</a>
+            <hr>
+            <button type="button" id="Registrarse">Registrarse</button>
+            <hr>
+            <button type="button" id="Inicio">Iniciar Sesion</button>
+        </nav>
+
+    </header>
+
+
+    <div class="container" id="container">
+        <div class="in-flex">
+            <img src="../../ar/079e7d0c4555412c8590abdad08ea635-free.png" alt="Logo de la pagina">
+        </div>
+
+        <div class="in-flex">
+            <h3>ArticHub es una plataforma versátil donde los usuarios pueden registrar, compartir y descubrir artículos
+                sobre una amplia gama de temas, desde tecnología y moda hasta cultura y estilo de vida. Esta plataforma
+                está diseñada para ser un espacio inclusivo donde los creadores de contenido pueden publicar sus ideas y
+                conocimientos, y donde los lectores pueden explorar y mantenerse al día con las últimas tendencias y
+                avances en diversas áreas de interés. Con una interfaz intuitiva y funciones fáciles de usar, ArticHub
+                se convierte en el lugar ideal para conectar a personas apasionadas por la información y la innovación.
+            </h3>
+        </div>
+    </div>
+
+    <div class="modal-inicio" id="modal_inicio">
+        <p class="close-modal" id="closeModal">&times;</p>
+        <h1>Inicio de sesion</h1>
+        <form action="">
+            <input type="text" name="Usuario" id="usuario" placeholder="Usuario" required>
+            <input type="text" name="contraseña" id="contraseña" placeholder="Contraseña" required>
+            <button type="submit" id="boton_iniciar">Iniciar</button>
+        </form>
+        <h4 id="olvide_contra">olvidaste tu contraseña?</h4>
+    </div>
+
+    <div class="modal-contra" id="modal_contra">
+        <p class="close-modal" id="closeModal">&times;</p>
+        <h1>Olvidaste tu contraseña</h1>
+        <form action="">
+            <input type="email" placeholder="Ingrese el correo">
+            <button type="submit" id="enviar-correo">Enviar correo</button>
+        </form>
+    </div>
+
+    <div id="registroContainer" class="modal-registro">
+        <p class="close-modal" id="closeModal">&times;</p>
+        <h2>Registrarme</h2>
+        <form action="">
+            <div class="form-columns">
+                <div class="left-column">
+                    <input type="text" placeholder="Nombre usuario" required>
+                    <input type="email" placeholder="Correo Electronico" required>
+                    <input type="text" placeholder="Nombre Completo" required>
+                    <fieldset>
+                        <legend>Género (Opcional):</legend>
+                        <label>
+                            <input type="radio" name="genero" value="Masculino"> Masculino
+                        </label>
+                        <label>
+                            <input type="radio" name="genero" value="Femenino"> Femenino
+                        </label>
+                        <label>
+                            <input type="radio" name="genero" value="Otro"> Otro
+                        </label>
+                        <label>
+                            <input type="radio" name="genero" value="Prefiero no decirlo"> Prefiero no decirlo
+                        </label>
+                    </fieldset>
+                </div>
+                <div class="right-column">
+                    <input type="date" placeholder="Fecha de nacimiento" required>
+                    <input type="text" placeholder="País o Región" required>
+                    <input type="password" placeholder="Contraseña" required>
+                    <input type="password" placeholder="Confirmar Contraseña" required>
+                    <button type="submit" id="registrar">Registrar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="frontend/js/script.js"></script>
+</body>
+
+</html>
