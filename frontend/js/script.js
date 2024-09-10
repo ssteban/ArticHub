@@ -29,6 +29,39 @@ document.querySelectorAll(".close-modal").forEach(function(element) {
     });
 });
 
+//menu movil
+document.getElementById("InicioM").addEventListener("click", function() {
+    document.getElementById("registroContainer").style.display = "none";
+    document.getElementById("modal_contra").style.display = "none";
+    document.getElementById("modal_inicio").style.display = "block";
+    document.getElementById("container").classList.add("blur-background");
+});
+
+document.getElementById("olvide_contra").addEventListener("click", function(){
+    document.getElementById("registroContainer").style.display = "none";
+    document.getElementById("modal_inicio").style.display = "none";
+    document.getElementById("modal_contra").style.display = "block";
+    document.getElementById("container").classList.add("blur-background");
+
+})
+
+document.getElementById("RegistrarseM").addEventListener("click", function(){
+    document.getElementById("modal_inicio").style.display = "none";
+    document.getElementById("modal_contra").style.display = "none";
+    document.getElementById("registroContainer").style.display = "block";
+    document.getElementById("container").classList.add("blur-background");
+})
+
+document.querySelectorAll(".close-modal").forEach(function(element) {
+    element.addEventListener("click", function() {
+        document.getElementById("modal_inicio").style.display = "none";
+        document.getElementById("modal_contra").style.display = "none";
+        document.getElementById("registroContainer").style.display = "none";
+        document.getElementById("container").classList.remove("blur-background");
+    });
+});
+//fin menu movil
+
 document.getElementById("menu_boton").addEventListener("click", function(){
     let estilo=document.getElementById("menu").style.display;
     if (estilo=="none"){
