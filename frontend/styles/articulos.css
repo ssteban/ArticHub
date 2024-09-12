@@ -15,6 +15,29 @@ nav {
     align-items: center;
     background-color: rgba(65, 54, 212, 0.85);
     padding: 0 15px;
+    color: #fff;
+}
+
+/* Ocultar el menú móvil por defecto */
+.menu {
+    display: none;
+    width: 150px;
+    color: white;
+    position: absolute; /* Cambiar a posición absoluta */
+    right: 0;
+}
+.menu button{
+    margin-bottom: 15px;
+    /*poner el witd el heig cambia colores ajustar botones y mas*/
+} 
+.menu_boton {
+    display: none;
+    cursor: pointer;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    outline: none;
 }
 
 .menu-1, .menu-2 {
@@ -31,14 +54,18 @@ button{
     margin-left: 10px;
 }
 
+.menu-1 {
+    margin-right: 950px;
+}
 .menu-2 {
-    margin-right: 15px;
+    position: absolute;
+    right: 0;
 }
 
 .menu-2 button {
     width: 128px;
     height: 29px;
-    margin-left: 10px;
+    margin-right: 10px;
     border-radius: 15px;
 }
 
@@ -46,6 +73,41 @@ button{
     background-color: #B3B3B3;
 }
 /*Fin barra de navegacion*/
+
+@media screen and (max-width: 690px){
+    .menu-1,
+    .menu-2 {
+        display: none;
+    }
+    .menu_boton{
+        display: block;
+    }
+    .menu button{
+        width: auto;
+        height: 30px;
+        margin: 0;
+    }
+    .menu #InicioM{
+        margin-bottom: 10px;
+    }
+    .modal-inicio{
+        width: 80%;
+    }
+    .modal-registro {
+        width: 80% !important; 
+    }
+
+    #registroContainer .form-columns {
+        display: block !important; /* Forzar que se aplique el display en bloque */
+    }
+
+    #registroContainer .left-column,
+    #registroContainer .right-column {
+        width: 100% !important; /* Forzar que las columnas ocupen el 100% */
+        margin-bottom: 10px !important; /* Añadir espacio entre los campos */
+    }
+}
+
 
 .modal-inicio {
     display: none; /* El modal está oculto por defecto */
