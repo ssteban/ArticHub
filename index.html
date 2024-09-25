@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="frontend/styles/index.css">
     <title>Inicio</title>
+    <link rel="icon" href="ar/079e7d0c4555412c8590abdad08ea635-free.png" type="image/x-icon"/>
 </head>
 
 <body>
@@ -66,7 +67,7 @@
         <p class="close-modal" id="closeModal">&times;</p>
         <h1>Olvidaste tu contraseña</h1>
         <form action="">
-            <input type="email" placeholder="Ingrese el correo">
+            <input type="email" placeholder="Ingrese el correo" required>
             <button type="submit" id="enviar-correo">Enviar correo</button>
         </form>
     </div>
@@ -77,9 +78,9 @@
         <form action="">
             <div class="form-columns">
                 <div class="left-column">
-                    <input type="text" placeholder="Nombre usuario" required>
-                    <input type="email" placeholder="Correo Electronico" required>
-                    <input type="text" placeholder="Nombre Completo" required>
+                    <input type="text" id="nombre_usuario" placeholder="Nombre usuario" required>
+                    <input type="email" id="email" placeholder="Correo Electronico" required>
+                    <input type="text" id="nombre_completo" placeholder="Nombre Completo" required>
                     <fieldset>
                         <legend>Género (Opcional):</legend>
                         <label>
@@ -97,10 +98,10 @@
                     </fieldset>
                 </div>
                 <div class="right-column">
-                    <input type="date" placeholder="Fecha de nacimiento" required>
-                    <input type="text" placeholder="País o Región" required>
-                    <input type="password" placeholder="Contraseña" required>
-                    <input type="password" placeholder="Confirmar Contraseña" required>
+                    <input type="date" id="fecha" placeholder="Fecha de nacimiento" required>
+                    <input type="text" id="pais" placeholder="País o Región" required>
+                    <input type="password" id="pass" placeholder="Contraseña" required>
+                    <input type="password" id="conpass" placeholder="Confirmar Contraseña" required>
                     <button type="submit" id="registrar">Registrar</button>
                 </div>
             </div>
