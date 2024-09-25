@@ -54,6 +54,9 @@ async def registrar(request: Request):
             INSERT INTO usuarios (usuario, correo, nombre, genero, fechaNacimiento, pais, contraseña)
             VALUES (%s, %s, %s, %s, %s, %s, %s)
             ''', (usuario, correo, nombre, genero, fechaNacimiento, pais, contraseña))
+            cursor.execute('''
+            INSERT INTO Roll (correo) VALUES(%s)
+            ''', (correo,))
             conn.commit()
             cursor.close()
             conn.close()
@@ -66,8 +69,35 @@ async def registrar(request: Request):
 @app.post("/iniciar")
 async def iniciar(request: Request):
     datos = await request.json()
-    print(datos)
-    return {"success": "true" ,"mensaje": "Datos recibidos correctamente", "data": datos}
+    usuario=datos.get('usuario')
+    contraseña=datos.get('contraseña')
+    try:
+        conn = mysql.connector.connect(**DB_CONFIG)
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute('SELECT * FROM usuarios WHERE correo=%s', (usuario,))
+        usuario_encontrado = cursor.fetchone()
+        if usuario_encontrado is None:
+            cursor.close()
+            conn.close()
+            return {"success": "false", "mensaje": "Usuario no encontrado."}
+        if usuario_encontrado['activo'] != 1:
+            cursor.close()
+            conn.close()
+            return {"success": "false", "mensaje": "Usuario no activo. Por favor, contacte con soporte."}
+        contraseña_almacenada = usuario_encontrado['contraseña']
+        if bcrypt.checkpw(contraseña.encode('utf-8'), contraseña_almacenada.encode('utf-8')):
+            cursor.execute('SELECT cargo FROM Roll WHERE correo=%s', (usuario,))
+            cargo=cursor.fetchone()
+            cursor.close()
+            conn.close()
+            return {"success": "true", "mensaje": "Inicio de sesión exitoso.", 'cargo': cargo['cargo']}
+        else:
+            cursor.close()
+            conn.close()
+            return {"success": "false", "mensaje": "Contraseña incorrecta."}
+    except mysql.connector.Error as err:
+        print(str(err))
+        return {"success": "false", "mensaje": "Error en la base de datos intentelo mas tarde."}
 
 
 

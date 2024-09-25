@@ -1,5 +1,3 @@
-//var ruta="http://127.0.0.1:8000"
-var ruta="https://artichub.onrender.com";
 
 document.getElementById("Inicio").addEventListener("click", function() {
     document.getElementById("registroContainer").style.display = "none";
@@ -77,6 +75,25 @@ document.getElementById("menu_boton").addEventListener("click", function(){
 })
 //fin menu movil
 
+var rutalocal="http://127.0.0.1:8000"
+var ruta="https://artichub.onrender.com";
+
+function limpiar() {
+    document.getElementById('usuario').value = "";
+    document.getElementById('contraseña').value = "";
+    document.getElementById('nombre_usuario').value = "";
+    document.getElementById('email').value = "";
+    document.getElementById('nombre_completo').value = "";
+    const generoSeleccionado = document.querySelector('input[name="genero"]:checked');
+    if (generoSeleccionado) {
+        generoSeleccionado.checked = false;
+    }
+    document.getElementById('fecha').value = "";
+    document.getElementById('pais').value = "";
+    document.getElementById('pass').value = "";
+    document.getElementById('conpass').value = "";
+}
+
 
 
 document.getElementById("boton_iniciar").addEventListener("click", function() {
@@ -101,9 +118,11 @@ document.getElementById("boton_iniciar").addEventListener("click", function() {
     .then(response=> response.json())
     .then(data =>{
         if(data.success){
-            alert("Inicio exitoso")
+            alert(data.mensaje)
+            limpiar()
         }else{
             alert(data.mensaje)
+            limpiar()
         }
     })
     .catch(error => {
@@ -143,13 +162,14 @@ document.getElementById("registrar").addEventListener("click", function() {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            alert(data.mensaje)
-            document.getElementById("registroContainer").style.display = "none"
-            document.getElementById("modal_inicio").style.display = "block";
+            alert(data.mensaje);  // Mensaje de éxito
+            limpiar();             // Limpiar campos
+            document.getElementById("registroContainer").style.display = "none";  // Cerrar modal de registro
+            document.getElementById("modal_inicio").style.display = "block";      // Abrir modal de inicio de sesión
         } else {
-            alert(data.mensaje)
+            alert(data.mensaje);
         }
-    })
+    })    
     .catch(error => {
         console.error('Error:', error);
         alert('Hubo un problema con el registro del usuario.');
