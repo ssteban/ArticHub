@@ -1,4 +1,5 @@
-var ruta="http://127.0.0.1:8000"
+//var ruta="http://127.0.0.1:8000"
+var ruta="https://artichub.onrender.com";
 
 document.getElementById("Inicio").addEventListener("click", function() {
     document.getElementById("registroContainer").style.display = "none";
