@@ -6,7 +6,4 @@ document.getElementById("menu_boton").addEventListener("click", function(){
         document.getElementById("menu").style.display="none";
     }
 })
-document.getElementById('profile-pic').addEventListener('click', function () {
-    const profileContainer = document.querySelector('.profile-container');
-    profileContainer.classList.toggle('active');
-});
+
