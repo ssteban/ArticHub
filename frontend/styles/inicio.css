@@ -110,6 +110,7 @@ h1#Ini {
     background-color: #5757f5;
 }
 
+
 /* Estilos para pantallas grandes (PC) */
 @media screen and (min-width: 690px) {
     .menu_boton {
@@ -140,7 +141,7 @@ h1#Ini {
     }
 
     .menu {
-        display: flex; /* Mostrar el menú en columna al hacer clic en el botón */
+        display: none; /* Mostrar el menú en columna al hacer clic en el botón */
     }
 
     #foto {

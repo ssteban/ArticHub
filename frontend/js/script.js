@@ -1,3 +1,11 @@
+document.getElementById("menu_boton").addEventListener("click", function(){
+    let estilo=document.getElementById("menu").style.display;
+    if (estilo=="none"){
+        document.getElementById("menu").style.display="block";
+    }else{
+        document.getElementById("menu").style.display="none";
+    }
+})
 
 document.getElementById("Inicio").addEventListener("click", function() {
     document.getElementById("registroContainer").style.display = "none";
@@ -65,14 +73,7 @@ document.querySelectorAll(".close-modal").forEach(function(element) {
     });
 });
 
-document.getElementById("menu_boton").addEventListener("click", function(){
-    let estilo=document.getElementById("menu").style.display;
-    if (estilo=="none"){
-        document.getElementById("menu").style.display="block";
-    }else{
-        document.getElementById("menu").style.display="none";
-    }
-})
+
 //fin menu movil
 
 var rutalocal="http://127.0.0.1:8000"
