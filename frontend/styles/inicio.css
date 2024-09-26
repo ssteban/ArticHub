@@ -12,9 +12,15 @@ nav {
     background-color: #4136D4;
     padding: 15px 15px;
     color: #fff;
-    position: relative; /* Importante para el menú móvil */
+    position: relative;
 }
 
+.menu-p {
+    display: flex;
+    align-items: center;
+}
+
+/* Ajustamos la lista del menú principal */
 .menu-p ul {
     display: flex;
     list-style-type: none;
@@ -40,6 +46,19 @@ nav {
 h1#Ini {
     margin: 0;
     font-size: 24px;
+    margin-left: 10px;
+}
+
+#foto, #foto-menu {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#foto-menu{
+    display: block;
+    margin: auto;
 }
 
 /* Estilos del botón de menú para móviles */
@@ -60,7 +79,7 @@ h1#Ini {
     flex-direction: column;
     align-items: flex-start;
     background-color: #4136D4;
-    width: 100%;
+    width: 150px;
     position: absolute;
     top: 60px;
     right: 0;
@@ -101,13 +120,12 @@ h1#Ini {
         display: none; /* Ocultar el menú móvil en PC */
     }
 
-    .menu-p ul {
-        display: flex; /* Mostrar el menú principal como un flex en pantallas grandes */
+    #foto {
+        display: block; /* Mostrar la imagen en la barra de navegación para pantallas grandes */
     }
 
-    .menu-p {
-        display: flex;
-        align-items: center;
+    #foto-menu {
+        display: none; /* Ocultar la imagen de perfil dentro del menú en pantallas grandes */
     }
 }
 
@@ -123,5 +141,13 @@ h1#Ini {
 
     .menu {
         display: flex; /* Mostrar el menú en columna al hacer clic en el botón */
+    }
+
+    #foto {
+        display: none; /* Ocultar la imagen de perfil en la barra de navegación para pantallas pequeñas */
+    }
+
+    #foto-menu {
+        display: block; /* Mostrar la imagen de perfil solo dentro del menú en pantallas pequeñas */
     }
 }
