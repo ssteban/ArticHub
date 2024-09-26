@@ -106,7 +106,7 @@ document.getElementById("boton_iniciar").addEventListener("click", function() {
         return
     }
 
-    fetch(ruta+"/iniciar" ,{
+    fetch(rutalocal+"/iniciar" ,{
         method:"POST",
         headers:{
             "Content-Type":"application/json"
@@ -120,6 +120,9 @@ document.getElementById("boton_iniciar").addEventListener("click", function() {
         if(data.success){
             alert(data.mensaje)
             limpiar()
+            if(data.cargo=="usuario"){
+                window.location.href = "../frontend/templates/inicio.html";
+            }
         }else{
             alert(data.mensaje)
             limpiar()
@@ -150,7 +153,7 @@ document.getElementById("registrar").addEventListener("click", function() {
         alert("ambas contraseñas deben coincidir")
         return
     }
-    fetch(ruta + '/registrar', {
+    fetch(rutalocal + '/registrar', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
