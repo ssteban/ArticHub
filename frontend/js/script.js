@@ -106,7 +106,7 @@ document.getElementById("boton_iniciar").addEventListener("click", function() {
         return
     }
 
-    fetch(rutalocal+"/iniciar" ,{
+    fetch(ruta+"/iniciar" ,{
         method:"POST",
         headers:{
             "Content-Type":"application/json"
@@ -153,7 +153,7 @@ document.getElementById("registrar").addEventListener("click", function() {
         alert("ambas contraseñas deben coincidir")
         return
     }
-    fetch(rutalocal + '/registrar', {
+    fetch(ruta + '/registrar', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
