@@ -56,9 +56,13 @@ h1#Ini {
     object-fit: cover;
 }
 
+#foto{
+    cursor: pointer;
+}
 #foto-menu{
     display: block;
     margin: auto;
+    cursor: pointer;
 }
 
 /* Estilos del botón de menú para móviles */
@@ -110,6 +114,37 @@ h1#Ini {
     background-color: #5757f5;
 }
 
+.perfil {
+    display: none;
+    width: 150px;
+    background-color: #4136D4;
+    position: absolute;
+    right: 0;
+}
+
+.perfil ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.perfil ul li {
+    border-left: 3px solid transparent; 
+}
+
+.perfil ul li a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: left;
+}
+
+.perfil ul li:hover {
+    background-color: #5A4FF8;
+    border-left: 3px solid white;
+}
 
 /* Estilos para pantallas grandes (PC) */
 @media screen and (min-width: 690px) {
